@@ -1,9 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="THE AGRALOST — Pixel collectible universe."><title>THE AGRALOST</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head>
-<body><div class="noise"></div><header class="site-header"><a class="brand" href="#home"><span class="brand-mark">A</span>THE AGRALOST</a><button class="menu-button" aria-expanded="false">MENU</button><nav class="main-nav"><a href="#collection">COLLECTION</a><a href="#quests">QUESTS</a><a href="file:///C:/Users/kingp/Documents/Codex/2026-09-11/new-chat/outputs/index.html">PLAY GAME</a><a href="#about">ABOUT</a><a class="nav-x" href="https://x.com/XARONSPACE" target="_blank" rel="noopener">GO TO X ↗</a></nav></header>
-<main><section id="home" class="hero section-shell"><div class="hero-copy"><p class="eyebrow">PIXEL COLLECTIBLE UNIVERSE · SEASON 01</p><h1>THE AGRALOST<br><em>AWAKENS.</em></h1><p class="lead">Collect, explore, and become one of the first travelers in this small but brave pixel universe.</p><div class="hero-actions"><a class="button primary" href="#collection">EXPLORE COLLECTION ↓</a><a class="button ghost" href="https://x.com/XARONSPACE" target="_blank" rel="noopener">FOLLOW ON X ↗</a><a class="button game-button" href="file:///C:/Users/kingp/Documents/Codex/2026-09-11/new-chat/outputs/index.html">PLAY GAME ↗</a></div><p class="micro-copy">Wallet connection is coming soon. Join the universe and complete quests for now.</p></div><div class="hero-art"><div class="sun"></div><div class="mountain mountain-a"></div><div class="mountain mountain-b"></div><div class="pixel-character"><i></i><b></b><span></span></div><div class="art-label"><span>01</span> SPACE RESERVED FOR YOUR ARTWORK</div></div></section>
-<section id="collection" class="section-shell section-block"><div class="section-heading"><p class="eyebrow">01 / ARCHIVE</p><h2>THE FIRST <em>COLLECTION</em></h2><p>You can add 50–100 artworks here. The cards are ready as placeholders for now.</p></div><div id="collection-grid" class="collection-grid"></div></section>
-<section id="quests" class="section-shell section-block quest-section"><div class="section-heading"><p class="eyebrow">02 / QUEST BOARD</p><h2>JOIN THE <em>WAITLIST</em></h2><p>To get on the waitlist, you need to complete the tasks below. After that, a new task will be unlocked asking you to connect your wallet.</p></div><div id="quest-list" class="quest-list"></div><div id="wallet-gate" class="wallet-gate" hidden><p class="eyebrow">WALLET UNLOCKED</p><h3>CONNECT YOUR WALLET</h3><p>Connect with MetaMask to finish your waitlist entry. This site will only request your public wallet address; it will never request a transaction.</p><button id="wallet-button" class="button primary">CONNECT METAMASK</button><p id="wallet-status" aria-live="polite"></p></div></section>
-<section id="about" class="section-shell section-block about-section"><div><p class="eyebrow">03 / SIGNAL</p><h2>JOIN <em>XARON SPACE.</em></h2></div><div><p class="lead">Follow XARON SPACE on X. New collections, announcements, and quests will be shared there.</p><a class="button primary" href="https://x.com/XARONSPACE" target="_blank" rel="noopener">FOLLOW ON X ↗</a></div></section></main>
-<footer class="site-footer"><span>© 2026 AGRALOST</span><span>LEGENDS WITHIN THE LOST</span><a href="https://x.com/XARONSPACE" target="_blank" rel="noopener">X ↗</a></footer><script src="config.js"></script><script src="script.js"></script></body></html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THE AGRALOST FLYING</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-panel">
+      <header class="game-header">
+        <div class="brand"><span class="brand-mark">✦</span><span>THE AGRALOST FLYING</span></div>
+        <button id="soundButton" class="icon-button" aria-label="Toggle sound">♬</button>
+      </header>
+      <div id="game" class="game" role="application" aria-label="The Agralost Flying game">
+        <div class="sky-glow glow-one"></div><div class="sky-glow glow-two"></div>
+        <div class="stars" aria-hidden="true"></div>
+        <div class="score-wrap"><span>SCORE</span><strong id="score">0</strong></div>
+        <div id="bird" class="bird"><img id="gameBirdImage" src="sky-guardian.png" alt="Blue and gold eagle" /></div>
+        <div id="pipeLayer"></div>
+        <div class="ground"><div class="ground-line"></div></div>
+        <div id="intro" class="overlay intro">
+          <div class="crest">✦</div>
+          <p class="eyebrow">SPREAD YOUR WINGS</p>
+          <h1>The Agralost Flying.</h1>
+          <p>Glide through the obstacles, collect crystals, and forge your legend.</p>
+          <button id="startButton" class="primary-button">START FLIGHT <span>→</span></button>
+          <small>FLY WITH SPACE, ↑, OR A CLICK</small>
+        </div>
+        <div id="gameOver" class="overlay hidden">
+          <p class="eyebrow">FLIGHT OVER</p>
+          <h2 id="gameOverTitle">Try a new route.</h2>
+          <div class="result"><span>YOUR SCORE</span><strong id="finalScore">0</strong></div>
+          <button id="retryButton" class="primary-button">FLY AGAIN <span>↻</span></button>
+        </div>
+      </div>
+      <footer><span>SPACE &amp; LEFT-CLICK TO FLY</span><span>DEMO VERSION</span></footer>
+    </section>
+
+    <aside class="side-panel">
+      <div class="network"><span class="status-dot"></span> SKY NETWORK</div>
+      <section class="hero-copy">
+        <p class="eyebrow">NFT FLIGHT EXPERIENCE</p>
+        <h2>Every flight,<br><em>a legend.</em></h2>
+        <p class="muted">Rule the skies with your guardian NFT. Reach 20 points, then start your next flight with the Legend Remastered Bird.</p>
+      </section>
+      <section class="guardian-collection" aria-label="Guardian collection">
+        <div class="collection-heading"><span class="label">YOUR GUARDIANS</span><span>2 TO COLLECT</span></div>
+        <article id="originalGuardianCard" class="guardian-card active">
+          <div class="guardian-thumb"><img src="sky-guardian.png" alt="Sky Guardian" /></div>
+          <div class="guardian-info"><span class="label">STARTER · ACTIVE</span><h3>Sky Guardian <span>#001</span></h3><p>FLIGHT +12% · LUCK +08%</p></div>
+          <span class="card-state">ACTIVE</span>
+        </article>
+        <article id="legendGuardianCard" class="guardian-card locked">
+          <div class="guardian-thumb"><img src="legend-remastered-bird.png" alt="Legend Remastered Bird" /></div>
+          <div class="guardian-info"><span class="label">LEGENDARY GUARDIAN</span><h3>Legend Remastered Bird <span>#020</span></h3><p>FLIGHT +15% · LUCK +12% · WONDERFUL WINGS</p></div>
+          <span id="legendState" class="card-state">REACH 20</span>
+        </article>
+        <p class="collection-note">Score 20 or more in one flight to unlock the Legend Remastered Bird for your next flight.</p>
+      </section>
+      <section class="wallet-card">
+        <div class="wallet-heading"><span class="label">WALLET</span><strong id="walletStatus">Not connected</strong></div>
+        <label class="wallet-input-label" for="walletInput">METAMASK WALLET ADDRESS</label>
+        <input id="walletInput" class="wallet-input" type="text" inputmode="text" autocomplete="off" placeholder="0x..." maxlength="42" />
+        <label class="wallet-consent"><input id="walletConsent" type="checkbox" /> I agree that my public wallet address and connection time may be recorded for customer updates.</label>
+        <div class="wallet-actions"><button id="walletButton">CONNECT WALLET</button><span id="walletRecordStatus">No record sent</span></div>
+      </section>
+      <p class="disclaimer">Demo version: no wallet signature, transaction, or private key is ever requested.</p>
+    </aside>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="game.js"></script>
+</body>
+</html>
